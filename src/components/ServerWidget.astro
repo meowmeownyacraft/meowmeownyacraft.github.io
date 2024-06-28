@@ -1,0 +1,62 @@
+---
+import { MAIN_IP } from "../consts";
+---
+
+<div class="mb-24 p-4 bg-black/40 rounded-lg flex">
+    <img
+        class="server-icon w-full h-auto max-w-32 max-sm:max-w-16 max-sm:h-full max-sm:self-center object-cover"
+        alt="Icon どこ?"
+    />
+    <div class="flex-grow pl-4">
+        <div class="flex">
+            <p class="pr-4 flex-grow">
+                <strong class="server-greet pr-2"></strong><span
+                    class="server-version"></span>
+            </p>
+            <p class="player-count text-slate-50">hello? :3</p>
+        </div>
+        <div>
+            <i class="text-sm">(Add this as an IP in your server list)</i>
+            <code class="block text-slate-300 bg-[#00000050]">
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8]"
+                >
+                    {MAIN_IP}
+                </span>
+            </code>
+        </div>
+    </div>
+</div>
+
+<script is:inline define:vars={{ MAIN_IP }}>
+    const ip = MAIN_IP;
+
+    async function serverInfo(ip) {
+        return fetch(`https://api.mcsrvstat.us/3/${ip}`)
+            .then((res) => res.json())
+            .then((server) => {
+                return server;
+            })
+            .catch((err) => console.log(err));
+    }
+
+    serverInfo(ip).then((server) => {
+        const playercount = document.querySelector(".player-count");
+        const servergreet = document.querySelector(".server-greet");
+        const serverversion = document.querySelector(".server-version");
+        const servericon = document.querySelector(".server-icon");
+
+        servericon.src = server.icon;
+
+        if (server.online) {
+            const s = server.players.online == 1 ? "" : "s";
+            playercount.innerHTML = `${server.players.online} player${s} online`;
+            servergreet.innerHTML = `Join us meow!`;
+            serverversion.innerHTML = `mc ver. ${server.protocol.name}`;
+        } else {
+            playercount.innerHTML = `Server offline`;
+            playercount.classList.add("text-red-400");
+            servergreet.innerHTML = `Nyoo :c`;
+        }
+    });
+</script>

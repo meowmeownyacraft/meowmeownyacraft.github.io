@@ -1,0 +1,30 @@
+<p class="playercount">0 players online</p>
+
+<script>
+	const ip = "mmnc.i1vy.moe";
+
+	async function serverInfo(ip) {
+		return fetch(`https://api.mcsrvstat.us/3/${ip}`)
+			.then((res) => res.json())
+			.then((server) => {
+				return server;
+			})
+			.catch((err) => console.log(err));
+	}
+
+	serverInfo(ip).then((server) => {
+		const playercount = document.querySelector(".playercount");
+		if (server.online) {
+			const s = server.players.online == 1 ? "" : "s";
+			playercount.innerHTML = `${server.players.online} player${s} online`;
+		} else {
+			playercount.innerHTML = `server offline`;
+		}
+	});
+</script>
+
+<style>
+	.playercount {
+		color: white;
+	}
+</style>

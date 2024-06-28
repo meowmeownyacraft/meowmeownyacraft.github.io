@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import PlayerCount from "../components/PlayerCount.astro"
 import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
 ---
@@ -43,6 +44,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
                     >
                         {MAIN_IP}
                     </span>
+                    <PlayerCount>
                 </code>
             </div>
         </main>

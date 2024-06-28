@@ -2,7 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import PlayerCount from "../components/PlayerCount.astro"
+import ServerWidget from "../components/ServerWidget.astro";
 import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
 ---
@@ -12,42 +12,22 @@ import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
     <head>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
-    <body class="bg-main bg-cover">
+    <body class="bg-main bg-cover dark:bg-gray-950">
         <Header />
         <main class="text-slate-200 min-h-[75vh] mt-8 drop-shadow-lg">
-            <Image
-                inferSize
-                src="https://avatars.githubusercontent.com/u/173955009"
-                alt=""
-                class="mx-auto"
-                loading="eager"
-            />
             <h1 class="text-center text-slate-50 mt-8">
                 hi! welcome to <span
                     class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8]"
                     >mmnc</span
                 >
             </h1>
-            <p class="mb-24 text-center">
+            <p class="mb-12 text-center">
                 'mmnc' stands for meowmeownyacraft. It's a new minecraft server,
                 where our goal is to enhance the vanilla experience with fun
                 stuff and make it comfy :3
             </p>
-            <div class="mb-24 p-4 bg-black/40">
-                <strong>Join us!</strong> - mc ver. 1.21
-                <br />
-                <i>(Add this as an IP in your server list)</i>
-                <br />
-                <code class="block text-slate-300 bg-[#00000050]">
-                    <span
-                        class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8]"
-                    >
-                        {MAIN_IP}
-                    </span>
-                    <PlayerCount>
-                </code>
-            </div>
+            <ServerWidget />
+            <Footer />
         </main>
-        <Footer />
     </body>
 </html>

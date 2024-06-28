@@ -14,20 +14,24 @@ import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
     </head>
     <body class="bg-main bg-cover dark:bg-gray-950">
         <Header />
-        <main class="text-slate-200 min-h-[75vh] mt-8 drop-shadow-lg">
+        <main class="text-slate-200 min-h-[75vh]">
             <h1 class="text-center text-slate-50 mt-8">
-                hi! welcome to <span
-                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8]"
-                    >mmnc</span
+                hi! welcome to
+                <span class="bg-gray-800/50 p-2 backdrop-blur-sm">
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8]"
+                        >mmnc</span
+                    ></span
                 >
             </h1>
-            <p class="mb-12 text-center">
+            <p
+                class="mb-12 text-center [text-shadow:_0_1px_1em_rgb(0_0_0_/_80%)]"
+            >
                 'mmnc' stands for meowmeownyacraft. It's a new minecraft server,
                 where our goal is to enhance the vanilla experience with fun
                 stuff and make it comfy :3
             </p>
             <ServerWidget />
-            <Footer />
         </main>
     </body>
 </html>

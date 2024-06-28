@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        main: "url('/screenshot-tree.png')",
+        main: "url('/screenshot-home.png')",
       },
     },
   },

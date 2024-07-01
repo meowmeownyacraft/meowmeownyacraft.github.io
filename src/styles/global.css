@@ -59,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 0.5rem 0;
+    margin: 1.5rem 0;
     line-height: 1.2;
 }
 h1 {
@@ -149,4 +149,17 @@ hr {
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
+}
+
+ul,
+ol {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+ul ol,
+ol ol,
+ul ul,
+ol ul {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }

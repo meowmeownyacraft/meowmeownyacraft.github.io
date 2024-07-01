@@ -2,7 +2,7 @@
 title: 'mmnc has been released!'
 description: ':3'
 pubDate: 'Jun 27 2024'
-heroImage: '/screenshot-distance.png'
+heroImage: '/screenshot-home.png'
 ---
 
 # here it is :3

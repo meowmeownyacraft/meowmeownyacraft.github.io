@@ -7,6 +7,7 @@ export default {
     extend: {
       backgroundImage: {
         main: "url('/screenshot-home.png')",
+        tree: "url('/screenshot-tree.png')",
       },
     },
   },

@@ -2,26 +2,32 @@
 import { MAIN_IP } from "../consts";
 ---
 
-<div class="mb-24 p-4 bg-black/40 rounded-lg flex backdrop-blur-xl">
+<div
+    class="mb-24 p-4 bg-black/40 rounded-lg flex backdrop-blur-xl border border-solid border-slate-100/10"
+>
     <img
-        class="server-icon w-full h-auto max-w-32 max-sm:max-w-16 max-sm:h-full max-sm:self-center object-cover"
+        class="server-icon w-full h-auto max-w-32
+        max-sm:max-w-24 max-sm:-my-4 max-sm:-ml-4
+        max-sm:rounded-tr-none max-sm:rounded-br-none
+        object-cover"
         alt="Icon どこ?"
+        style="image-rendering: high-quality"
     />
     <div class="flex-grow pl-4">
         <div class="flex">
             <p class="pr-4 flex-grow">
                 <strong class="server-greet pr-2"></strong><span
-                    class="server-version"></span>
+                    class="server-version text-slate-200 font-light"></span>
             </p>
-            <p class="player-count text-slate-50">hello? :3</p>
+            <p class="player-count text-slate-200 font-light">hello? :3</p>
         </div>
         <div>
             <i class="text-sm">(Add this as an IP in your server list)</i>
             <code class="block text-slate-300 bg-[#00000050] rounded-md">
-				<span
-					class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8] pl-1.5"
-					>{MAIN_IP}</span
-				>
+                <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8] pl-1.5"
+                    >{MAIN_IP}</span
+                >
             </code>
         </div>
     </div>

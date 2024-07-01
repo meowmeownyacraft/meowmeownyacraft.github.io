@@ -8,27 +8,27 @@ import { SITE_TITLE } from "../consts";
     class="sticky top-0 z-20 bg-slate-50/80 dark:bg-gray-900/70 dark:text-slate-100 backdrop-blur-lg"
 >
     <nav>
-        <h2 class="md:w-36">
+        <h2 class="md:w-40">
             <a href="/"
                 ><span
-                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8] text-nowrap"
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8] text-nowrap font-black"
                     >{SITE_TITLE}</span
                 >
                 <Image
                     inferSize
                     src="https://avatars.githubusercontent.com/u/173955009"
                     alt=""
-                    class="inline-block max-h-16 max-w-16 max-md:hidden"
+                    class="inline-block max-h-12 max-w-12 max-sm:hidden"
                     loading="eager"
                 /></a
             >
         </h2>
-        <div class="internal-links">
+        <div class="internal-links text-base">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
         </div>
-        <div class="social-links w-36 md:flex max-md:hidden justify-end">
+        <div class="social-links w-40 md:flex max-md:hidden justify-end">
             <a href="https://github.com/meowmeownyacraft" target="_blank">
                 <span class="sr-only">Our Github</span>
                 <svg

@@ -96,7 +96,7 @@ import { Image } from "astro:assets";
     </svg>
 </button>
 
-<div onclick="closeNav()" class="close-overlay z-20 backdrop-blur-lg"></div>
+<div onclick="closeNav()" class="close-overlay z-20"></div>
 
 <script is:inline>
     function openNav() {
@@ -121,6 +121,8 @@ import { Image } from "astro:assets";
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1.25rem);
+        -webkit-backdrop-filter: blur(1.25rem);
     }
 
     .navButton {

@@ -2,16 +2,18 @@
 import HeaderLink from "./HeaderLink.astro";
 import { Image } from "astro:assets";
 import { SITE_TITLE } from "../consts";
+import SideNav from "./SideNav.astro";
 ---
 
 <header
-    class="sticky top-0 z-20 bg-slate-50/80 dark:bg-gray-900/70 dark:text-slate-100 backdrop-blur-lg"
+    class="sticky top-0 z-20 bg-slate-50/80 dark:bg-gray-900/70 dark:text-slate-100 backdrop-blur-lg min-h-10"
 >
     <nav>
-        <h2 class="md:w-40">
+        <h2 class="md:w-40 my-0 max-sm:mx-auto max-sm:mt-2">
             <a href="/"
                 ><span
-                    class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8] text-nowrap font-black"
+                    class="bg-clip-text text-transparent bg-gradient-to-r
+                    dark:from-[#5bcefa] dark:to-[#f5a9b8] from-[#459dbf] to-[#bd828e] text-nowrap font-black"
                     >{SITE_TITLE}</span
                 >
                 <Image
@@ -23,7 +25,7 @@ import { SITE_TITLE } from "../consts";
                 /></a
             >
         </h2>
-        <div class="internal-links text-base">
+        <div class="internal-links text-base max-sm:hidden">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
@@ -45,6 +47,7 @@ import { SITE_TITLE } from "../consts";
         </div>
     </nav>
 </header>
+<SideNav />
 <style>
     header {
         margin: 0;
@@ -52,7 +55,6 @@ import { SITE_TITLE } from "../consts";
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
     }
     h2 {
-        margin: 0;
         font-size: 1em;
     }
 

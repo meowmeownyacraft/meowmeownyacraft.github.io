@@ -1,0 +1,157 @@
+---
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+import { Image } from "astro:assets";
+---
+
+<div
+    class="mobile-nav text-gray-950 bg-slate-100/70 dark:text-slate-100 dark:bg-gray-950/70 z-30"
+>
+    <Image
+        inferSize
+        src="https://avatars.githubusercontent.com/u/173955009"
+        alt=""
+        class="block max-h-20 max-w-20 mx-auto"
+        loading="eager"
+    />
+    <p class="text-center text-3xl border-b border-slate-500/10 pb-8 mx-8">
+        <span
+            class="bg-clip-text text-transparent bg-gradient-to-r
+            dark:from-[#5bcefa] dark:to-[#f5a9b8] from-[#459dbf] to-[#bd828e] text-nowrap font-black"
+            >{SITE_TITLE}</span
+        >
+    </p>
+    <HeaderLink
+        onclick="closeNav()"
+        class="text-gray-950 dark:text-slate-50/90"
+        href="/"><span class="inline-block">Home</span></HeaderLink
+    >
+    <HeaderLink
+        onclick="closeNav()"
+        class="text-gray-950 dark:text-slate-50/90"
+        href="/blog"><span class="inline-block">Blog</span></HeaderLink
+    >
+    <HeaderLink
+        onclick="closeNav()"
+        class="text-gray-950 dark:text-slate-50/90"
+        href="/about"><span class="inline-block">About</span></HeaderLink
+    >
+    <div class="mt-8">
+        <a
+            href="https://github.com/meowmeownyacraft"
+            target="_blank"
+            class="text-gray-950/50 dark:text-slate-50/50 max-w-max inline-block"
+        >
+            <span class="sr-only">Our Github</span>
+            <svg
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                width="32"
+                height="32"
+                astro-icon="social/github"
+                ><path
+                    fill="currentColor"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                ></path></svg
+            >
+        </a>
+    </div>
+    <button
+        onclick="closeNav()"
+        class="close absolute bottom-12 right-12 ml-14"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x-lg w-6 h-6"
+            viewBox="0 0 16 16"
+        >
+            <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+            ></path>
+        </svg>
+    </button>
+</div>
+
+<button
+    onclick="openNav()"
+    class="nav-button text-gray-950 bg-slate-200/70 dark:text-slate-100 dark:bg-gray-950/70
+    backdrop-blur-lg z-10 fixed bottom-7 left-7 rounded-full h-16 w-16
+    flex justify-center items-center border border-slate-500/20 cursor-auto sm:hidden"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-list h-3/6 w-3/6"
+        viewBox="0 0 16 16"
+    >
+        <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+        ></path>
+    </svg>
+</button>
+
+<div onclick="closeNav()" class="close-overlay z-20 backdrop-blur-lg"></div>
+
+<script is:inline>
+    function openNav() {
+        document.querySelector(".mobile-nav").classList.add("opened");
+        document.querySelector(".close-overlay").classList.add("dimmed");
+    }
+    function closeNav() {
+        document.querySelector(".mobile-nav").classList.remove("opened");
+        document.querySelector(".close-overlay").classList.remove("dimmed");
+    }
+</script>
+
+<style>
+    .mobile-nav.opened {
+        width: 250px;
+    }
+
+    .dimmed {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.25s;
+    }
+
+    .mobile-nav a {
+        padding: 0.5em 0.5em 0.5em 1em;
+        text-decoration: none;
+        font-size: 150%;
+        display: block;
+        transition: 0.2s;
+        margin: 0 0.35em;
+    }
+
+    .mobile-nav .close {
+        outline: 0;
+        border: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+</style>

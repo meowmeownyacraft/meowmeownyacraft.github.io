@@ -3,6 +3,7 @@ import HeaderLink from "./HeaderLink.astro";
 import { Image } from "astro:assets";
 import { SITE_TITLE } from "../consts";
 import SideNav from "./SideNav.astro";
+import favicon from "../../public/favicon.png";
 ---
 
 <header
@@ -16,14 +17,7 @@ import SideNav from "./SideNav.astro";
                     dark:from-[#5bcefa] dark:to-[#f5a9b8] from-[#459dbf] to-[#bd828e] text-nowrap font-black"
                     >{SITE_TITLE}</span
                 >
-                <Image
-                    inferSize
-                    src="https://avatars.githubusercontent.com/u/173955009"
-                    alt=""
-                    class="inline-block max-h-12 max-w-12 max-sm:hidden"
-                    loading="eager"
-                /></a
-            >
+            </a>
         </h2>
         <div class="internal-links text-base max-sm:hidden">
             <HeaderLink href="/">Home</HeaderLink>

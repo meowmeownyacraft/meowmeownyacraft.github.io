@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import ServerWidget from "../components/ServerWidget.astro";
 import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
+import favicon from "../../public/favicon.png";
 ---
 
 <!doctype html>
@@ -11,24 +12,20 @@ import { SITE_TITLE, SITE_DESCRIPTION, MAIN_IP } from "../consts";
     <head>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
-    <body class="bg-main bg-cover bg-fixed bg-center dark:bg-gray-950">
+    <body
+        class="bg-main bg-cover bg-fixed bg-center dark:bg-gray-950 backdrop-blur-sm min-h-[100vh]"
+    >
         <Header />
-        <main class="text-slate-200 mx-auto mt-4">
-            <h2
-                class="text-center text-slate-200 mt-8 font-light [text-shadow:_0_0_1em_rgb(0_0_0_/_80%)]"
-            >
-                hi! welcome to
-                <span
-                    class="bg-gray-800/50 p-2 backdrop-blur-sm rounded-lg inline-block [text-shadow:_0_0_1em_rgb(0_0_0_/_0%)]"
-                >
-                    <span
-                        class="bg-clip-text text-transparent bg-gradient-to-r from-[#5bcefa] to-[#f5a9b8] font-black"
-                        >mmnc</span
-                    ></span
-                >
-            </h2>
+        <main class="text-slate-200 mx-auto mt-12">
+            <Image
+                src={favicon}
+                alt=""
+                class="mx-auto max-w-64 object-contain"
+                loading="eager"
+            />
+
             <p
-                class="mb-12 text-center [text-shadow:_0_0_1em_rgb(0_0_0_/_80%)] text-base font-bold"
+                class="my-12 text-center [text-shadow:_0_0_1em_rgb(0_0_0_/_80%)] text-base font-bold"
             >
                 'mmnc' stands for meowmeownyacraft. It's a new minecraft server,
                 where our goal is to enhance the vanilla experience with fun

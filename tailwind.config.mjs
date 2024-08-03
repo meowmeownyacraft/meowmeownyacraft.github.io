@@ -9,6 +9,7 @@ export default {
         main: "url('/walls/screenshot-home.png')",
         tree: "url('/walls/screenshot-tree.png')",
         about: "url('/walls/screenshot-about.png')",
+        brick: "url('/walls/polished_blackstone_bricks.png')",
       },
     },
   },

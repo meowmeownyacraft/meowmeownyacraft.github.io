@@ -5,11 +5,11 @@ const { class: className } = Astro.props;
 ---
 
 <header class:list={[className]}>
-    <a href="/" class="grow">
+    <a href="/" class="grow items-stretch flex">
         <img
             src="/logo.svg"
             alt=""
-            class="pt-4 mx-auto w-48 h-32 object-contain"
+            class="pt-4 mx-auto w-48 h-32 object-contain self-center shadow-2xl"
             loading="eager"
         />
     </a>

@@ -15,7 +15,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <BaseHead title={title + " | mmnc"} description={description} />
     </head>
 
-    <body class="bg-zinc-950 text-slate-50">
+    <body class="bg-zinc-950 text-slate-50 bg-brick bg-repeat bg-[length:64px_64px] [image-rendering:_crisp-edges]">
         <SideNav />
         <div class="w-full">
             {
@@ -30,10 +30,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         </div>
         <main class="mx-auto px-8 max-w-3xl">
             <article>
-                <div class="bg-zinc-950/90 pb-24">
+                <div class="pb-24">
                     <div class="prose-alignment">
                         <div class="text-center mt-12">
-                            <div class="date">
+                            <div class="date opacity-75">
                                 <FormattedDate date={pubDate} />
                                 {
                                     updatedDate && (

@@ -1,0 +1,17 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SideNav from "../components/SideNav.astro";
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <body class="bg-black text-slate-50">
+        <SideNav />
+        <slot />
+    </body>
+</html>

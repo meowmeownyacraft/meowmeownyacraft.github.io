@@ -1,0 +1,27 @@
+---
+import NavLink from "./NavLink.astro";
+---
+
+<nav class="w-full p-4 flex flex-row justify-center backdrop-blur-md bg-zinc-950/50 font-mono max-sm:hidden">
+    <NavLink
+        class="transition-all hover:text-gray-200 hover:bg-zinc-800/50 p-4"
+        href="/"><span class="inline-block">Home</span></NavLink
+    >
+    <NavLink
+        class="transition-all hover:text-gray-200 hover:bg-zinc-800/50 p-4"
+        href="/blog"><span class="inline-block">Blog</span></NavLink
+    >
+    <NavLink
+        class="transition-all hover:text-gray-200 hover:bg-zinc-800/50 p-4"
+        href="/about"><span class="inline-block">About</span></NavLink
+    >
+</nav>
+
+<style>
+	a {
+		text-decoration: none;
+	}
+	a.active {
+		font-weight: bolder;
+	}
+</style>

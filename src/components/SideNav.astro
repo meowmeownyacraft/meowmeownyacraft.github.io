@@ -1,40 +1,30 @@
 ---
-import { SITE_TITLE } from "../consts";
-import HeaderLink from "./HeaderLink.astro";
-import { Image } from "astro:assets";
+import NavLink from "./NavLink.astro";
 ---
 
 <div
-    class="mobile-nav text-gray-950 bg-slate-100/70 dark:text-slate-100 dark:bg-gray-950/70 z-30"
+    class="mobile-nav text-slate-100 bg-zinc-950/70 z-30 font-mono"
 >
-    <Image
-        inferSize
-        src="https://avatars.githubusercontent.com/u/173955009"
+    <img
+        src="/logo.svg"
         alt=""
-        class="block max-h-20 max-w-20 mx-auto"
+        class="block max-h-20 mx-auto mb-8"
         loading="eager"
     />
-    <p class="text-center text-3xl border-b border-slate-500/10 pb-8 mx-8">
-        <span
-            class="bg-clip-text text-transparent bg-gradient-to-r
-            dark:from-[#5bcefa] dark:to-[#f5a9b8] from-[#459dbf] to-[#bd828e] text-nowrap font-black"
-            >{SITE_TITLE}</span
-        >
-    </p>
-    <HeaderLink
+    <NavLink
         onclick="closeNav()"
-        class="text-gray-950 dark:text-slate-50/90"
-        href="/"><span class="inline-block">Home</span></HeaderLink
+        class="text-slate-50/90"
+        href="/"><span class="inline-block">Home</span></NavLink
     >
-    <HeaderLink
+    <NavLink
         onclick="closeNav()"
-        class="text-gray-950 dark:text-slate-50/90"
-        href="/blog"><span class="inline-block">Blog</span></HeaderLink
+        class="text-slate-50/90"
+        href="/blog"><span class="inline-block">Blog</span></NavLink
     >
-    <HeaderLink
+    <NavLink
         onclick="closeNav()"
-        class="text-gray-950 dark:text-slate-50/90"
-        href="/about"><span class="inline-block">About</span></HeaderLink
+        class="text-slate-50/90"
+        href="/about"><span class="inline-block">About</span></NavLink
     >
     <div class="mt-8">
         <a
@@ -77,9 +67,9 @@ import { Image } from "astro:assets";
 
 <button
     onclick="openNav()"
-    class="nav-button text-gray-950 bg-slate-200/70 dark:text-slate-100 dark:bg-gray-950/70
+    class="nav-button text-slate-100 bg-zinc-950/70
     backdrop-blur-lg z-10 fixed bottom-7 left-7 rounded-full h-16 w-16
-    flex justify-center items-center border border-slate-500/20 cursor-auto sm:hidden"
+    flex justify-center items-center border border-zinc-500/50 cursor-auto sm:hidden"
 >
     <svg
         xmlns="http://www.w3.org/2000/svg"

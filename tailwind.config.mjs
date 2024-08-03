@@ -6,8 +6,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        main: "url('/screenshot-home.png')",
-        tree: "url('/screenshot-tree.png')",
+        main: "url('/walls/screenshot-home.png')",
+        tree: "url('/walls/screenshot-tree.png')",
+        about: "url('/walls/screenshot-about.png')",
       },
     },
   },

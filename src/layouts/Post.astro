@@ -1,0 +1,184 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import SideNav from "../components/SideNav.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title + " | mmnc"} description={description} />
+    </head>
+
+    <body class="bg-zinc-950 text-slate-50">
+        <SideNav />
+        <div class="w-full">
+            {
+                heroImage && (
+                    <img
+                        src={heroImage}
+                        alt=""
+                        class="rounded-none w-full h-[45vh] object-cover"
+                    />
+                )
+            }
+        </div>
+        <main class="mx-auto px-8 max-w-3xl">
+            <article>
+                <div class="bg-zinc-950/90 pb-24">
+                    <div class="prose-alignment">
+                        <div class="text-center mt-12">
+                            <div class="date">
+                                <FormattedDate date={pubDate} />
+                                {
+                                    updatedDate && (
+                                        <div class="last-updated-on">
+                                            Last updated on{" "}
+                                            <FormattedDate date={updatedDate} />
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <h1 class="mt-2 capitalize text-4xl">{title}</h1>
+                            <hr class="my-4" />
+                        </div>
+                        <a href="/blog" class="py-2 px-4 w-full block bg-black mb-12">‹ Head back to blog index</a>
+                        <slot />
+                    </div>
+                </div>
+            </article>
+        </main>
+        <Footer />
+        <style is:global>
+            @tailwind base;
+            @layer base {
+                ul,
+                ol,
+                li {
+                    list-style: revert-layer;
+                    padding: revert-layer;
+                }
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 1.5rem 0;
+                line-height: 1.2;
+                font-weight: 800;
+                font-family: monospace;
+                
+            }
+            h1 {
+                font-size: 2.352em;
+            }
+            h2 {
+                font-size: 2.041em;
+            }
+            h3 {
+                font-size: 1.953em;
+            }
+            h4 {
+                font-size: 1.563em;
+            }
+            h5 {
+                font-size: 1.25em;
+            }
+            strong,
+            b {
+                font-weight: 700;
+            }
+            a {
+                color: #fbc6f6;
+                transition: all 0.1 ease-out;
+            }
+            a:hover {
+                color: #d88dd1;
+            }
+            p {
+                margin-bottom: 1em;
+            }
+            .prose p {
+                margin-bottom: 2em;
+            }
+            textarea {
+                width: 100%;
+                font-size: 16px;
+            }
+            input {
+                font-size: 16px;
+            }
+            table {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+            code {
+                padding: 2px 5px;
+                background-color: #5252524c;
+                border-radius: 2px;
+            }
+            pre {
+                padding: 1.5em;
+                border-radius: 8px;
+            }
+            pre > code {
+                all: unset;
+            }
+            blockquote {
+                border-left: 4px solid #63636395;
+                padding: 0 0 0 20px;
+                margin: 0px;
+                font-size: 1.333em;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #63636395;
+            }
+            @media (max-width: 720px) {
+                body {
+                    font-size: 18px;
+                }
+                main {
+                    padding: 1em;
+                }
+            }
+
+            .sr-only {
+                border: 0;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+                clip-path: inset(50%);
+                white-space: nowrap;
+            }
+
+            ul,
+            ol {
+                margin-bottom: 2em;
+                margin-top: 2em;
+            }
+            ul ol,
+            ol ol,
+            ul ul,
+            ol ul {
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+            }
+        </style>
+    </body>
+</html>

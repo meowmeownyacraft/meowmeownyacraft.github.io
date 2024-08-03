@@ -1,123 +1,257 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
+import Layout from "../layouts/Main.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout
-    title="about us"
-    description="meow!"
-    pubDate={new Date("Jan 01 1984")}
-    heroImage="/screenshot-about.png"
->
-    <p>hey there, first off, thanks for reading up on us.</p>
+<Layout title="about us | mmnc" description="meow!">
+    <Header class="bg-about bg-center bg-cover h-96 flex flex-col" />
+    <main class="mx-auto mt-12 px-8 max-w-3xl">
+        <h1 class="text-center pb-8">about us</h1>
+        <p>hey there, first off, thanks for reading up on us.</p>
 
-    <p>
-        our server always runs the latest version of minecraft, but we plan to
-        also include a b1.7.3 flavor of mmnc as a seperate server in the near
-        future :3
-        <br />
-        head to the home screen to get the IP to join us!
-    </p>
+        <p>
+            our server always runs the latest version of minecraft, but we plan
+            to also include a b1.7.3 flavor of mmnc as a seperate server in the
+            near future :3
+            <br />
+            head to the home screen to get the IP to join us!
+        </p>
 
-    <p>
-        we also intend to open source everything - our plugins, this website and
-        more - all on our github
-    </p>
+        <p>
+            we also intend to open source everything - our plugins, this website
+            and more - all on our github
+        </p>
 
-    <h2>How to play?</h2>
-    <p>
-        our IP is on the home page of this website, <a href="/"
-            >so go there and copy it :3</a
-        >
-    </p>
-    <p>
-        we recommend the <a
-            href="https://modrinth.com/modpack/fabulously-optimized"
-            >Fabulously Optimized modpack</a
-        >, which you can download immediately from inside <a
-            href="https://prismlauncher.org/">Prism Launcher</a
-        >
-    </p>
-    <p>
-        additionally, to spice up your experience, you can use the <a
-            href="https://modrinth.com/plugin/simple-voice-chat"
-            >Simple Voice Chat mod</a
-        > (optional), which our server supports c:
-    </p>
-
-    <h2>Code of Conduct <br /> (Da Rules)</h2>
-    <p>
-        it's important that we, the players, don't flip our little cute server
-        on it's head. so we prepared some rules that you'll have to follow if
-        you want to play:
-    </p>
-    <ol class="mb-8 list-decimal">
-        <li>No exploits, hacking/cheating or griefing</li>
-        <li>No homophobia, transphobia, xenophobia, racism etc.</li>
-        <li>Don't be a mean kitty/ouppy</li>
-        <li>
-            Use CWs when you can, so people aren't put off by stuff you say or
-            build
-        </li>
-        <li>No doxxing, harassment, ban evasion or dogpiling</li>
-        <li>
-            Do not spread false or misleading information and/or malicious links
-        </li>
-        <li>Do not promote violent ideologies or incite violence</li>
-    </ol>
-
-    <h2>The fun stuff</h2>
-    <p>our server features:</p>
-    <ul class="mb-8 list-disc">
-        <li>
-            Enhanced vanilla survival experience, no pay2win stuff or extra
-            mechanics
-        </li>
-        <li>
-            The ability to set your real height with <code
-                >/height [your height in cm]</code
+        <h2>How to play?</h2>
+        <p>
+            our IP is on the home page of this website, <a href="/"
+                >so go there and copy it :3</a
             >
-        </li>
-        <li>
-            Pronouns with <a href="https://pronoundb.org/">PronounDB.org</a> integration
-        </li>
-        <li>
-            Emojis! Simply use <code>:emoji:</code>, for e.g. <code>:star:</code
-            > to print a ⭐
-        </li>
-        <li>
-            Voice chat support through <a
+        </p>
+        <p>
+            we recommend the <a
+                href="https://modrinth.com/modpack/fabulously-optimized"
+                >Fabulously Optimized modpack</a
+            >, which you can download immediately from inside <a
+                href="https://prismlauncher.org/">Prism Launcher</a
+            >
+        </p>
+        <p>
+            additionally, to spice up your experience, you can use the <a
                 href="https://modrinth.com/plugin/simple-voice-chat"
-                >Simple Voice Chat</a
-            > mod
-        </li>
-    </ul>
+                >Simple Voice Chat mod</a
+            > (optional), which our server supports c:
+        </p>
 
-    <h2>How to report bugs or players?</h2>
-    <p>
-        tell an admin (pink name) or mod (light blue name) in chat, or <a
-            href="https://github.com/orgs/meowmeownyacraft/discussions"
-            >tell us on github discussions</a
-        >
-    </p>
-    <p>
-        if it's a <strong>bug</strong>, then make a github issue <a
-            href="https://github.com/meowmeownyacraft/mmnc/issues">here</a
-        >
-    </p>
+        <h2>Code of Conduct <br /> (Da Rules)</h2>
+        <p>
+            it's important that we, the players, don't flip our little cute
+            server on it's head. so we prepared some rules that you'll have to
+            follow if you want to play:
+        </p>
+        <ol class="mb-8 list-decimal">
+            <li>No exploits, hacking/cheating or griefing</li>
+            <li>No homophobia, transphobia, xenophobia, racism etc.</li>
+            <li>Don't be a mean kitty/ouppy</li>
+            <li>
+                Use CWs when you can, so people aren't put off by stuff you say
+                or build
+            </li>
+            <li>No doxxing, harassment, ban evasion or dogpiling</li>
+            <li>
+                Do not spread false or misleading information and/or malicious
+                links
+            </li>
+            <li>Do not promote violent ideologies or incite violence</li>
+        </ol>
 
-    <h2>The cute cat girls (staff)</h2>
-    <ul>
-        <li>i1vy (she/her)</li>
-        <ul>
-            <li><a href="https://i1vy.moe/">Website</a></li>
-            <li><a href="https://mastodon.social/@i1vy">Fedi</a></li>
-            <li><a href="https://namemc.com/profile/i1vy.2">NameMC</a></li>
+        <h2>The fun stuff</h2>
+        <p>our server features:</p>
+        <ul class="mb-8 list-disc">
+            <li>
+                Enhanced vanilla survival experience, no pay2win stuff or extra
+                mechanics
+            </li>
+            <li>
+                The ability to set your real height with <code
+                    >/height [your height in cm]</code
+                >
+            </li>
+            <li>
+                Pronouns with <a href="https://pronoundb.org/">PronounDB.org</a>
+                integration
+            </li>
+            <li>
+                Emojis! Simply use <code>:emoji:</code>, for e.g. <code
+                    >:star:</code
+                > to print a ⭐
+            </li>
+            <li>
+                Voice chat support through <a
+                    href="https://modrinth.com/plugin/simple-voice-chat"
+                    >Simple Voice Chat</a
+                > mod
+            </li>
         </ul>
-        <li>nvkomata (she/her)</li>
+
+        <h2>How to report bugs or players?</h2>
+        <p>
+            tell an admin (pink name) or mod (light blue name) in chat, or <a
+                href="https://github.com/orgs/meowmeownyacraft/discussions"
+                >tell us on github discussions</a
+            >
+        </p>
+        <p>
+            if it's a <strong>bug</strong>, then make a github issue <a
+                href="https://github.com/meowmeownyacraft/mmnc/issues">here</a
+            >
+        </p>
+
+        <h2>The cute cat girls (staff)</h2>
         <ul>
-            <li><a href="https://nvkomata.gitlab.io/">Website</a></li>
-            <li><a href="https://mastodon.online/@nvkomata">Fedi</a></li>
-            <li><a href="https://namemc.com/profile/nvkomata.1">NameMC</a></li>
+            <li>i1vy (she/her)</li>
+            <ul>
+                <li><a href="https://i1vy.moe/">Website</a></li>
+                <li><a href="https://blahaj.zone/@i1vy">Fedi</a></li>
+                <li><a href="https://namemc.com/profile/i1vy.2">NameMC</a></li>
+            </ul>
+            <li>nvkomata (she/her)</li>
+            <ul>
+                <li><a href="https://nvkomata.gitlab.io/">Website</a></li>
+                <li><a href="https://akko.wtf/nvkomata">Fedi</a></li>
+                <li>
+                    <a href="https://namemc.com/profile/nvkomata.1">NameMC</a>
+                </li>
+            </ul>
         </ul>
-    </ul>
+    </main>
+    <Footer />
 </Layout>
+
+
+<style>
+    @tailwind base;
+            @layer base {
+                ul,
+                ol,
+                li {
+                    list-style: revert-layer;
+                    padding: revert-layer;
+                }
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 1.5rem 0;
+                line-height: 1.2;
+                font-weight: 800;
+                font-family: monospace;
+                text-transform: capitalize;
+            }
+            h1 {
+                font-size: 2.752em;
+            }
+            h2 {
+                font-size: 2.041em;
+            }
+            h3 {
+                font-size: 1.953em;
+            }
+            h4 {
+                font-size: 1.563em;
+            }
+            h5 {
+                font-size: 1.25em;
+            }
+            strong,
+            b {
+                font-weight: 700;
+            }
+            a {
+                color: #fbc6f6;
+                transition: all 0.1 ease-out;
+            }
+            a:hover {
+                color: #d88dd1;
+            }
+            p {
+                margin-bottom: 1em;
+            }
+            .prose p {
+                margin-bottom: 2em;
+            }
+            textarea {
+                width: 100%;
+                font-size: 16px;
+            }
+            input {
+                font-size: 16px;
+            }
+            table {
+                width: 100%;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+            code {
+                padding: 2px 5px;
+                background-color: #5252524c;
+                border-radius: 2px;
+            }
+            pre {
+                padding: 1.5em;
+                border-radius: 8px;
+            }
+            pre > code {
+                all: unset;
+            }
+            blockquote {
+                border-left: 4px solid #63636395;
+                padding: 0 0 0 20px;
+                margin: 0px;
+                font-size: 1.333em;
+            }
+            hr {
+                border: none;
+                border-top: 1px solid #63636395;
+            }
+            @media (max-width: 720px) {
+                body {
+                    font-size: 18px;
+                }
+            }
+
+            .sr-only {
+                border: 0;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+                clip-path: inset(50%);
+                white-space: nowrap;
+            }
+
+            ul,
+            ol {
+                margin-bottom: 2em;
+                margin-top: 2em;
+            }
+            ul ol,
+            ol ol,
+            ul ul,
+            ol ul {
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+            }
+    
+    </style>
+    

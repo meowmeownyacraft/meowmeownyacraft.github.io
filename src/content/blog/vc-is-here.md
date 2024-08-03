@@ -2,7 +2,7 @@
 title: 'we are voice chat ready now!'
 description: 'mmnc now supports simple voice chat mod'
 pubDate: 'Jul 1 2024'
-heroImage: '/vc1.png'
+heroImage: '/blog/vc1.png'
 ---
 
 # mmnc is voice chat ready!
